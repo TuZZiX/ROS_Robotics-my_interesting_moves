@@ -6,10 +6,12 @@ This repository depands on cwru_baxter (https://github.com/cwru-robotics/cwru_ba
 
 There is an uncommited change to cwru_baxter but it is essential for this package.
 Please replace the file in cwru_baxter with the file 
+
 	`cwru_baxter/baxter_traj_streamer/src/traj_interpolator_as.cpp`
 
 To run the code, run following code in your terminal:
-    `roslaunch cwru_baxter_sim baxter_world.launch`
+
+	`roslaunch cwru_baxter_sim baxter_world.launch`
 	`roslaunch my_interesting_moves interesting_moves_example.launch`
 
 This is a repository for assignment
