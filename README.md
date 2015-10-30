@@ -15,4 +15,5 @@ To run the code, run following code in your terminal:
 	roslaunch cwru_baxter_sim baxter_world.launch
 	roslaunch my_interesting_moves interesting_moves_example.launch
 
-This is a repository for assignment
+
+This is a repository for assignment, so the code may not be modified after.
