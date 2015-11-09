@@ -33,7 +33,6 @@ public:
         static Baxter_traj_streamer baxter_traj_streamer(nodehandle);
         traj_streamer = &baxter_traj_streamer;
         as_ = &action_client;
-        g_cnt = 0;
         ROS_INFO("Baxter_right_arm: waiting for server: ");
         while (ros::ok())
         {    // keep trying when failed
@@ -127,14 +126,14 @@ public:
             ros::spinOnce();
             ros::Duration(0.01).sleep();
         }
-        ROS_INFO("Baxter_right_arm: goal number %d accepted", g_cnt);
+        ROS_INFO("Baxter_right_arm: goal accepted");
     }
     ///  stop current movement
     ///
     void stop_move()
     {
         (*as_).cancelGoal();             // tell action server the goal have been canceled
-        ROS_INFO("Baxter_right_arm: goal number %d cancelled", g_cnt);
+        ROS_INFO("Baxter_right_arm: goal cancelled");
     }
     ///  check current action server state and compare with the state you want
     ///  state list:
@@ -168,11 +167,11 @@ public:
             bool finished_before_timeout = (*as_).waitForResult(ros::Duration(timeout));    // wait before timeout
             if (!finished_before_timeout)
             {
-                ROS_WARN("Baxter_right_arm: giving up waiting on result for goal number %d", g_cnt);
+                ROS_WARN("Baxter_right_arm: giving up waiting on result");
                 return false;            // did not finished on time
             }
         }
-        ROS_INFO("Baxter_right_arm: goal number %d finished before timeout", g_cnt);
+        ROS_INFO("Baxter_right_arm: goal finished before timeout");
         return true;                    // finished
     }
     ///  move hand to front and start waving  hand
