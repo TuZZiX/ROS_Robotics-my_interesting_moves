@@ -222,8 +222,8 @@ private:
         {3.028, 1.047, 0.890, 2.618, 3.059, 2.094, 3.059, },                 // upper limit
         {-3.028, -2.147, -2.461, -0.052, -3.059, -1.571, -3.059, }           // lower limit
     };
-    actionlib::SimpleActionClient<baxter_traj_streamer::trajAction> *as_;    // point to action client
-    baxter_traj_streamer::trajGoal goal_;                                    // goal of interpolator_as
+    actionlib::SimpleActionClient<cwru_action::trajAction> *as_;    // point to action client
+    cwru_action::trajGoal goal_;                                    // goal of interpolator_as
     trajectory_msgs::JointTrajectory joint_traj;                             // trajectory form of arm pose
     Baxter_traj_streamer *traj_streamer;                                     // point to traj streamer
     bool first_cmd = true;                                                   // first pose flag
