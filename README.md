@@ -1,4 +1,4 @@
-# ROS_Robotics-my_interesting_moves
+# eecs600_my_interesting_moves
 For documentations, refer html/index.html
 
 There is an example for how to use the library: src/interesting_moves_example.cpp
